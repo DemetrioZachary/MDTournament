@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1789457010156688}
+  m_IsPrefabAsset: 1
+--- !u!1 &1789457010156688
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4207017291509102}
+  - component: {fileID: 114358436397173294}
+  m_Layer: 0
+  m_Name: PrefabContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4207017291509102
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1789457010156688}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114358436397173294
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1789457010156688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d214f60587e4f542a96a37c42667263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fundCardPrefab: {fileID: 114161506250496726, guid: 43cce113e700d6346aafd287fdb283d3,
+    type: 2}
+  meleeWeaponCardPrefab: {fileID: 114752151895273942, guid: 9dc21ca279602194889f3be2528e19a6,
+    type: 2}
+  rangedWeaponCardPrefab: {fileID: 114760687356752728, guid: 201637a9846add14fa762267feb3b514,
+    type: 2}
+  highlightCardPrefab: {fileID: 114375108823597824, guid: 1b612d3667b81e247a2bf9a7de143b9a,
+    type: 2}
+  crewMemberCardPrefab: {fileID: 114188832876755984, guid: dc3d3a1d2ac1a2d41a70436da93c041d,
+    type: 2}
+  ammoCardPrefab: {fileID: 114419248165251288, guid: 363d79188b3c05b4f96b13f08d8ff91a,
+    type: 2}
