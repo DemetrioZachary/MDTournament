@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class RangedWeaponCard : Card {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    int damage;
+    int ammoCost;
+    int fireRate;
+
+    public override void Initialize(CardAsset cardAsset, DeckController belongingDeck) {
+        base.Initialize(cardAsset, belongingDeck);
+
+        damage = cardAsset.damage;
+        ammoCost = cardAsset.ammoCost;
+        fireRate = cardAsset.fireRate;
+    }
+
+    public override void Play() {
+
+    }
 }

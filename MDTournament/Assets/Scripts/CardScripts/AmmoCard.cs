@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class AmmoCard : Card {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    int damageBoost;
+    int sellValue;
+
+    public override void Initialize(CardAsset cardAsset, DeckController belongingDeck) {
+        base.Initialize(cardAsset, belongingDeck);
+
+        damageBoost = cardAsset.damageBoost;
+        sellValue = cardAsset.revenue;
+    }
+
+    public override void Play() {
+
+    }
 }

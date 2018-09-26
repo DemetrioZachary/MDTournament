@@ -36,9 +36,10 @@ public class DeckController : MonoBehaviour {
             }
         }
         ShuffleTrash();
-        LoadNextCard();
 
-        Debug.Log("Cards total: " + (deck.Count + 1).ToString());
+        Debug.Log("Cards total: " + (deck.Count).ToString());
+
+        LoadNextCard();
     }
     
     public void ShuffleTrash() {
@@ -64,7 +65,7 @@ public class DeckController : MonoBehaviour {
         if (deck.Count > 0) {
             CardAsset nextCardAsset = cardAssetMap[deck.Dequeue()];
             nextCard = Instantiate(PrefabContainer.instance.GetCardPrefabByType(nextCardAsset.type), Vector3.zero, Quaternion.Euler(90, 0, 0), transform.parent);
-            nextCard.InitializeCard(nextCardAsset, this);         
+            nextCard.Initialize(nextCardAsset, this);         
         }
     }
 

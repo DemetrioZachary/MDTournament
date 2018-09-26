@@ -20,11 +20,15 @@ public class DeckEditorWindow : EditorWindow {
             deckAssetList.Add(da);
         }
     }
+
+    Vector2 scrollPos;
     
     private void OnGUI() {
 
-        GUILayout.BeginHorizontal();
+        scrollPos = EditorGUILayout.BeginScrollView(scrollPos, false, false);
+
         GUILayout.Label("Deck Editor", EditorStyles.boldLabel);
+        GUILayout.BeginHorizontal();
         if (GUILayout.Button("New Deck")) {
             EditorUtility.FocusProjectWindow();
             CreateNewDeck();
@@ -75,6 +79,8 @@ public class DeckEditorWindow : EditorWindow {
             // DATA
 
             deckAssetList[viewIndex - 1].deckName = EditorGUILayout.TextField("Deck Name", deckAssetList[viewIndex - 1].deckName as string);
+
+            GUILayout.Space(10);
             for(int i=0; i< deckAssetList[viewIndex - 1].cardList.Count; i++) {
                 GUILayout.BeginHorizontal();
                 deckAssetList[viewIndex - 1].cardList[i] = EditorGUILayout.ObjectField(deckAssetList[viewIndex - 1].cardList[i], typeof(CardAsset), false) as CardAsset;
@@ -94,6 +100,7 @@ public class DeckEditorWindow : EditorWindow {
 
             GUILayout.Space(10);
 
+            EditorGUILayout.EndScrollView();
         }
         else {
             GUILayout.Label("No Deck Found");

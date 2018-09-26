@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class FundCard : Card {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    int revenue;
+
+    public override void Initialize(CardAsset cardAsset, DeckController belongingDeck) {
+        base.Initialize(cardAsset, belongingDeck);
+
+        revenue = cardAsset.revenue;
+    }
+
+    public override void Play() {
+
+    }
 }

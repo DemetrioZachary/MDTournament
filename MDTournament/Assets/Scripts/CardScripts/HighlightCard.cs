@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class HighlightCard : Card {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    int revenue;
+    int damageBoost;
+
+    public override void Initialize(CardAsset cardAsset, DeckController belongingDeck) {
+        base.Initialize(cardAsset, belongingDeck);
+
+        revenue = cardAsset.revenue;
+        damageBoost = cardAsset.damageBoost;
+    }
+
+    public override void Play() {
+
+    }
 }

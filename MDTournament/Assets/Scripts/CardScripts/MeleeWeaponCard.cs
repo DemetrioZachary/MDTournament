@@ -6,8 +6,8 @@ public class MeleeWeaponCard : Card {
 
     public int damage;
 
-    public override void InitializeCard(CardAsset cardAsset, DeckController belongingDeck) {
-        base.InitializeCard(cardAsset, belongingDeck);
+    public override void Initialize(CardAsset cardAsset, DeckController belongingDeck) {
+        base.Initialize(cardAsset, belongingDeck);
 
         damage = cardAsset.damage;
     }
