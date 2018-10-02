@@ -63,3 +63,11 @@ MonoBehaviour:
     type: 2}
   ammoCardPrefab: {fileID: 114419248165251288, guid: 363d79188b3c05b4f96b13f08d8ff91a,
     type: 2}
+  deckPrefab: {fileID: 114049184573978690, guid: e2af07697dc43d8449d56079e9f09d4c,
+    type: 2}
+  stashPrefab: {fileID: 114352157971136084, guid: 478e2e666344fcf4b9191ce52874d319,
+    type: 2}
+  characterPrefab: {fileID: 114315643285810738, guid: 80a96a2e12dc72c4299eb322dff66f3b,
+    type: 2}
+  handControllerPrefab: {fileID: 114081136591373060, guid: eeddd12b84b4cd740b3c3fb60afa7c50,
+    type: 2}

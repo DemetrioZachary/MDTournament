@@ -7,8 +7,8 @@ public class AmmoCard : Card {
     int damageBoost;
     int sellValue;
 
-    public override void Initialize(CardAsset cardAsset, DeckController belongingDeck) {
-        base.Initialize(cardAsset, belongingDeck);
+    public override void Initialize(CardAsset cardAsset) {
+        base.Initialize(cardAsset);
 
         damageBoost = cardAsset.damageBoost;
         sellValue = cardAsset.revenue;

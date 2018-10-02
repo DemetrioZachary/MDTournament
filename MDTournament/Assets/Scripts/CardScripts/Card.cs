@@ -8,18 +8,15 @@ public abstract class Card : MonoBehaviour {
 
     public CardType type;
     public string code;
-    protected int cost;
+    public int cost;
     protected Sprite image;
     protected string text;
-
-    protected DeckController belongingDeck;
 
     //public virtual void Draw() { }
     public virtual void Play() { }
     //public virtual void Discard() { }
 
-    public virtual void Initialize(CardAsset cardAsset, DeckController belongingDeck) {
-        this.belongingDeck = belongingDeck;
+    public virtual void Initialize(CardAsset cardAsset) {
         code = cardAsset.code;
         type = cardAsset.type;
         cost = cardAsset.cost;
@@ -30,6 +27,6 @@ public abstract class Card : MonoBehaviour {
 
     private void OnMouseUp() {
         Play();
-        belongingDeck.Discard(this);
+        GameManager.instance.GetCurrentPlayer().Discard(this);
     }
 }

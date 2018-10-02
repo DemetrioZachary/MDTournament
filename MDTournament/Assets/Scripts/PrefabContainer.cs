@@ -10,6 +10,13 @@ public class PrefabContainer : MonoBehaviour {
     public HighlightCard highlightCardPrefab;
     public CrewMemberCard crewMemberCardPrefab;
     public AmmoCard ammoCardPrefab;
+    [Space]
+    public Deck deckPrefab;
+    public Stash stashPrefab;
+    [Space]
+    public Character characterPrefab;
+    [Space]
+    public HandController handControllerPrefab;
 
 
     private static PrefabContainer s_Instance = null;

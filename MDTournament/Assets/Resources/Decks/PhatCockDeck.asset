@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05344ec557fbc6b4ea1380b9a5908b80, type: 3}
+  m_Name: PhatCockDeck
+  m_EditorClassIdentifier: 
+  deckName: PhatCockDeck
+  cardList:
+  - {fileID: 11400000, guid: 55c14b55a680f3b42ab2cc5c7353d4fd, type: 2}
+  - {fileID: 11400000, guid: 94b5604ea537cd64ea7dceaecce1e3ac, type: 2}
+  - {fileID: 11400000, guid: 9e4c1702681ec9841944ea97823863d1, type: 2}
+  - {fileID: 11400000, guid: 96a952690d8cc2e419116ee8f34975dc, type: 2}
+  quantityList: 05000000010000000100000002000000

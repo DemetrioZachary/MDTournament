@@ -8,8 +8,8 @@ public class RangedWeaponCard : Card {
     int ammoCost;
     int fireRate;
 
-    public override void Initialize(CardAsset cardAsset, DeckController belongingDeck) {
-        base.Initialize(cardAsset, belongingDeck);
+    public override void Initialize(CardAsset cardAsset) {
+        base.Initialize(cardAsset);
 
         damage = cardAsset.damage;
         ammoCost = cardAsset.ammoCost;

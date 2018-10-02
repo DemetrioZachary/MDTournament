@@ -10,8 +10,8 @@ public class CrewMemberCard : Card {
     int memberArmor;
     int memberDamage;
 
-    public override void Initialize(CardAsset cardAsset, DeckController belongingDeck) {
-        base.Initialize(cardAsset, belongingDeck);
+    public override void Initialize(CardAsset cardAsset) {
+        base.Initialize(cardAsset);
 
         memberType = cardAsset.memberType;
         memberArmor = cardAsset.memberArmor;

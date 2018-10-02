@@ -7,14 +7,14 @@ public class HighlightCard : Card {
     int revenue;
     int damageBoost;
 
-    public override void Initialize(CardAsset cardAsset, DeckController belongingDeck) {
-        base.Initialize(cardAsset, belongingDeck);
+    public override void Initialize(CardAsset cardAsset) {
+        base.Initialize(cardAsset);
 
         revenue = cardAsset.revenue;
         damageBoost = cardAsset.damageBoost;
     }
 
-    public override void Play() {
+    public override void Play() { 
 
     }
 }
