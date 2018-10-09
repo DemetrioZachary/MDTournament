@@ -15,8 +15,7 @@ public class MeleeWeaponCard : Card {
     public override void Play() {
         // open target selection menu
 
-        //GameManager.instance.GetNextPlayer().character.TakeDamage(damage);
+        GameManager.instance.GetNextPlayer().character.TakeDamage(damage);
     }
-
     
 }

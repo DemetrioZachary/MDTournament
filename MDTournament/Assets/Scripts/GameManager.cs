@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum TurnPhases { Drawing, Selecting, Attacking, Discarding }
 
 public class GameManager : MonoBehaviour {
 
@@ -38,37 +39,34 @@ public class GameManager : MonoBehaviour {
 
         for (int i = 0; i < NUMBER_OF_PLAYERS; i++) {
             players[i] = Instantiate(PrefabContainer.instance.handControllerPrefab);
-            players[i].playerNumber = i;
-            players[i].Initialize(characterAssets[i]);
+            players[i].Initialize(i, characterAssets[i]);
         }
 
         // TEST
-        DrawingPhase();
+        FirstTurnDrawing();
     }
 
+    private void FirstTurnDrawing() {
+        for (int i = 0; i < NUMBER_OF_PLAYERS; i++) {
+            int cardsToDraw = DEFAULT_CARD_NUMBER - NUMBER_OF_PLAYERS + i + 1;
+            for (int j = 0; j < cardsToDraw; j++) {
+                players[i].DrawFromDeck(players[i].mainDeck);
+            }
+        }
+
+        playerIndex = 0;
+        playing = true;
+    }
+
+
+
+    // CORE LOOP ------------------------------------------------ CORE LOOP //
     private void NextPlayer() {
         if (++playerIndex >= NUMBER_OF_PLAYERS) {
             playerIndex = 0;
         }
 
         // TEST
-        DrawingPhase();
-    }
-
-    private void DrawingPhase() {
-        int cardsToDraw = DEFAULT_CARD_NUMBER;
-        if (isFirstTurn) {
-            cardsToDraw -= NUMBER_OF_PLAYERS - playerIndex - 1;
-            if (playerIndex + 1 == NUMBER_OF_PLAYERS)
-                isFirstTurn = false;
-        }
-
-        for (int i = 0; i < cardsToDraw; i++) {
-            players[playerIndex].DrawFromDeck(players[playerIndex].mainDeck);
-        }
-
-        // TEST
-        print("Drawing" + playerIndex.ToString());
         playing = true;
     }
 
@@ -89,9 +87,21 @@ public class GameManager : MonoBehaviour {
 
         // TEST
         print("Discarding" + playerIndex.ToString());
-        NextPlayer();
-        
+        DrawingPhase();
     }
+
+    private void DrawingPhase() {
+        for (int i = 0; i < DEFAULT_CARD_NUMBER; i++) {
+            players[playerIndex].DrawFromDeck(players[playerIndex].mainDeck);
+        }
+
+        // TEST
+        print("Drawing" + playerIndex.ToString());
+        NextPlayer();
+    }
+    // CORE LOOP ------------------------------------------------ CORE LOOP //
+
+
 
     // Getters
 

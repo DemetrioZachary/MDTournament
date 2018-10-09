@@ -6,6 +6,7 @@ public class Deck : MonoBehaviour {
 
     public DeckAsset asset = null;
     public Vector3 nextCardRelPos;
+    public TextMesh counterText;
 
     protected Card nextCard = null;
 
@@ -14,9 +15,13 @@ public class Deck : MonoBehaviour {
     protected Dictionary<string, CardAsset> cardAssetMap = new Dictionary<string, CardAsset>();
     protected Dictionary<string, int> quantityMap = new Dictionary<string, int>();
 
-    private void Start() {
+    private void Awake() {
         if (asset)
             Initialize(asset);
+    }
+
+    private void Update() {
+        counterText.text = deck.Count.ToString();
     }
 
     public void Initialize(DeckAsset refAsset) {
@@ -37,7 +42,7 @@ public class Deck : MonoBehaviour {
         }
         Shuffle();
 
-        Debug.Log("Cards total: " + (deck.Count).ToString());
+        //Debug.Log("Cards total: " + (deck.Count).ToString());
     }
 
     protected void LoadNextCard() {
@@ -55,11 +60,14 @@ public class Deck : MonoBehaviour {
 
     public Card Draw() {
         Card drawCard = null;
+        LoadNextCard();
         if (nextCard) {
             drawCard = nextCard;
             nextCard = null;
             deck.RemoveAt(0);
-            LoadNextCard();
+        }
+        else {
+            print("NO CARD");
         }
         return drawCard;
     }
@@ -72,7 +80,6 @@ public class Deck : MonoBehaviour {
             deck.RemoveAt(index);
         }
         deck = temp;
-        LoadNextCard();
     }
 
     public int GetCardCount() {

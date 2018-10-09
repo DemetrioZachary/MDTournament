@@ -9,25 +9,28 @@ public class HandController : MonoBehaviour {
     public Deck mainDeck;
     public Stash stash;
     public Character character;
-    public int playerNumber;
+    public int playerIndex;
 
     public int funds = 0;
 
-    public Transform cardsMiddle;
     public Text fundText;
 
     private List<Card> handCards = new List<Card>();
+    private Transform cardsMiddle;
 
-    public void Initialize(CharacterAsset characterAsset) {
+    public void Initialize(int playerIndex, CharacterAsset characterAsset) {
+        this.playerIndex = playerIndex;
 
-        mainDeck = Instantiate(PrefabContainer.instance.deckPrefab, transform) as Deck;
+        mainDeck = Instantiate(PrefabContainer.instance.deckPrefab, CoordsContainer.instance.GetDeckTransform(playerIndex)) as Deck;
         mainDeck.Initialize(characterAsset.starterGears);
 
         stash = Instantiate(PrefabContainer.instance.stashPrefab, transform) as Stash;
         stash.Initialize();
 
-        character = Instantiate(PrefabContainer.instance.characterPrefab, transform) as Character;
+        character = Instantiate(PrefabContainer.instance.characterPrefab, CoordsContainer.instance.GetCharacterTransform(playerIndex)) as Character;
         character.Initialize(characterAsset);
+
+        cardsMiddle = CoordsContainer.instance.GetHandTransform(playerIndex);
     }
 
     public int GetHandCardsCount() {
@@ -65,9 +68,6 @@ public class HandController : MonoBehaviour {
             handCards.Add(newCard);
             newCard.transform.parent = cardsMiddle;
             ReorganizeCards();
-        }
-        else {
-            Debug.Log("No card");
         }
 
         if (mainDeck.GetCardCount() == 0) {

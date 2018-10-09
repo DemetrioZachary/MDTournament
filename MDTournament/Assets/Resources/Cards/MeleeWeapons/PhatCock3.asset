@@ -17,7 +17,7 @@ MonoBehaviour:
   cost: 100
   image: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   text: yee
-  damage: 50
+  damage: 15
   ammoCost: 0
   fireRate: 0
   memberType: 0
